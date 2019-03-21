@@ -3,7 +3,7 @@ package playstore
 import (
 	"time"
 
-	androidpublisher "google.golang.org/api/androidpublisher/v2"
+	androidpublisher "google.golang.org/api/androidpublisher/v3"
 )
 
 // IABResponse is wrapper struct for Product and Subscription response

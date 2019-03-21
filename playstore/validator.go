@@ -8,7 +8,7 @@ import (
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"golang.org/x/oauth2/jwt"
-	androidpublisher "google.golang.org/api/androidpublisher/v2"
+	androidpublisher "google.golang.org/api/androidpublisher/v3"
 )
 
 const (
@@ -48,6 +48,7 @@ func New(jsonKey []byte) (Client, error) {
 	return Client{conf.Client(ctx)}, err
 }
 
+// NewWithParams get params to make authentication
 func NewWithParams(key, email string) Client {
 	ctx := context.WithValue(oauth2.NoContext, oauth2.HTTPClient, &http.Client{
 		Timeout: timeout,
