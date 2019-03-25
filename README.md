@@ -1,5 +1,4 @@
-go-iap
-======
+# go-iap
 
 [![Build Status](https://travis-ci.org/evalphobia/go-iap.svg?branch=master)](https://travis-ci.org/evalphobia/go-iap)
 [![codecov.io](https://codecov.io/github/evalphobia/go-iap/coverage.svg?branch=master)](https://codecov.io/github/evalphobia/go-iap?branch=master)
@@ -8,8 +7,8 @@ go-iap verifies the purchase receipt via AppStore or GooglePlayStore.
 
 Current API Documents:
 
-* AppStore: [![GoDoc](https://godoc.org/github.com/evalphobia/go-iap/appstore?status.svg)](https://godoc.org/github.com/evalphobia/go-iap/appstore)
-* GooglePlay: [![GoDoc](https://godoc.org/github.com/evalphobia/go-iap/playstore?status.svg)](https://godoc.org/github.com/evalphobia/go-iap/playstore)
+- AppStore: [![GoDoc](https://godoc.org/github.com/evalphobia/go-iap/appstore?status.svg)](https://godoc.org/github.com/evalphobia/go-iap/appstore)
+- GooglePlay: [![GoDoc](https://godoc.org/github.com/evalphobia/go-iap/playstore?status.svg)](https://godoc.org/github.com/evalphobia/go-iap/playstore)
 
 # Differences from original
 
@@ -19,19 +18,20 @@ This repository is forked from [dogenzaka/go-iap](https://github.com/dogenzaka/g
 - some api for iap receipts
 
 # Dependencies
+
 ```bash
 go get github.com/parnurzeal/gorequest
 go get golang.org/x/net/context
 go get golang.org/x/oauth2
-go get google.golang.org/api/androidpublisher/v2
+go get google.golang.org/api/androidpublisher/v3
 ```
 
 # Installation
+
 ```bash
 go get github.com/evalphobia/go-iap/appstore
 go get github.com/evalphobia/go-iap/playstore
 ```
-
 
 # Quick Start
 
@@ -180,10 +180,13 @@ func cancel() {
 # Support
 
 ### In App Purchase
+
 This validator supports the receipt type for both iOS6 style or newer style.
 
 ### In App Billing
+
 This validator uses [Version 3 API](http://developer.android.com/google/play/billing/api.html).
 
 # License
+
 go-iap is licensed under the MIT.
