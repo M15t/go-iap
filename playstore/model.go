@@ -67,12 +67,10 @@ func (r IABResponse) IsExpired() bool {
 
 // IsTrial checks if the subscription is trial or not
 func (r IABResponse) IsTrial() bool {
-	switch {
-	case !r.IsValidSubscription() && r.SubscriptionPurchase.PaymentState != 2:
-		return false
-	default:
+	if r.SubscriptionPurchase.PaymentState == 2 {
 		return true
 	}
+	return false
 }
 
 // GetPaymentState cover int to string for PaymentState
