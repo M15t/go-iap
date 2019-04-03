@@ -68,6 +68,11 @@ func (r *Receipt) IsAutoRenewable() bool {
 	return r.InApps.IsAutoRenewable()
 }
 
+// IsEligibleForOffer checks this receipt is eligible for an introductory offer subscription or not
+func (r *Receipt) IsEligibleForOffer() bool {
+	return r.InApps.IsEligibleForOffer()
+}
+
 func (r *Receipt) HasError() error {
 	return HandleError(r.Status)
 }

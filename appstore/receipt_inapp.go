@@ -11,6 +11,7 @@ type ReceiptInApp struct {
 	TransactionID             int64
 	OriginalTransactionID     int64
 	IsTrialPeriod             bool
+	IsInIntroOfferPeriod      bool
 	AppItemID                 int64
 	VersionExternalIdentifier int64
 	WebOrderLineItemID        int64
@@ -21,6 +22,15 @@ type ReceiptInApp struct {
 }
 
 type ReceiptInApps []*ReceiptInApp
+
+func (r ReceiptInApps) IsEligibleForOffer() bool {
+	for _, v := range r {
+		if v.IsInIntroOfferPeriod || v.IsTrialPeriod {
+			return false
+		}
+	}
+	return true
+}
 
 func (r ReceiptInApps) IsAutoRenewable() bool {
 	for _, v := range r {
